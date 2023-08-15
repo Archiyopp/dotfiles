@@ -1,0 +1,27 @@
+[user]
+	email = cristian.fernandez@smartquick.com.co
+	name = cristian.fernandez2
+[credential]
+	helper = wincred
+[alias]
+	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+# `git dft` is less to type than `git difftool`.
+	dft = difftool
+[push]
+	autoSetupRemote = true
+[diff]
+    tool = difftastic
+	external = difft
+[difftool]
+    prompt = false
+[difftool "difftastic"]
+    cmd = difft "$LOCAL" "$REMOTE"
+[merge]
+    tool = default-mergetool
+[mergetool "default-mergetool"]
+    cmd = code --wait $MERGED
+# Use a pager for large output, just like other git commands.
+[pager]
+    difftool = true
+[init]
+	defaultBranch = main
